@@ -20,27 +20,32 @@
 
 import rox, sys, os
 from rox import g, app_options, applet, Menu, InfoWin, filer
+from rox.options import Option
 
 
 APP_NAME = 'Menu'
 APP_DIR = rox.app_dir
 APP_SIZE = [28, 150]
 
-from rox.options import Option
+#Options.xml processing
+from rox import choices
+choices.migrate(APP_NAME, 'hayber.us')
+rox.setup_app_options(APP_NAME, site='hayber.us')
+Menu.set_save_name(APP_NAME, site='hayber.us')
 
-rox.setup_app_options(APP_NAME)
 APPS = Option('applications', os.path.expanduser('~')+'/Apps')
-rox.app_options.notify()
 
-stuffx = []
-menu = []
-root = APPS.value
-factory = g.IconFactory()
+rox.app_options.notify()
 
 class RoxMenu(applet.Applet):
 	"""A Menu Applet"""
 	def __init__(self, filename):
 		applet.Applet.__init__(self, filename)
+
+		self.mainmenu_items = []
+		self.appmenu_items = []
+		self.root = APPS.value
+		self.factory = g.IconFactory()
 
 		self.vertical = self.get_panel_orientation() in ('Right', 'Left')
 		if self.vertical:
@@ -48,34 +53,35 @@ class RoxMenu(applet.Applet):
 		else:
 			self.set_size_request(-1, 8)
 
-		self.thing = None
 		self.image = g.Image()
 		self.pixbuf = g.gdk.pixbuf_new_from_file(APP_DIR+'/images/menu.svg')
 		self.image.set_from_pixbuf(self.pixbuf)
 		self.size = 0
 		self.add(self.image)
 
+		self.add_events(g.gdk.BUTTON_PRESS_MASK)
+		self.connect('button-press-event', self.button_press)
 		self.connect('size-allocate', self.event_callback)
 
 		tooltips = g.Tooltips()
 		tooltips.set_tip(self, _('Menu'), tip_private=None)
 
-		self.process_dir(root)
-		factory.add_default()
+		self.process_dir(self.root)
+		self.factory.add_default()
 
-		menu.append(Menu.Action(_('Info'), 'get_info', '', g.STOCK_DIALOG_INFO))
-		menu.append(Menu.Action(_('Options'), 'show_options', '', g.STOCK_PREFERENCES))
-		menu.append(Menu.Separator())
-		menu.append(Menu.Action(_('Close'), 'quit', '', g.STOCK_CLOSE))
+		self.mainmenu_items.sort()
 
-		self.add_events(g.gdk.BUTTON_PRESS_MASK)
-		self.connect('button-press-event', self.button_press)
-		Menu.set_save_name(APP_NAME)
-		self.menu = Menu.Menu('main', stuffx)
-		self.menu.attach(self, self)
+		self.mainmenu = Menu.Menu('main', self.mainmenu_items)
+		self.mainmenu.attach(self, self)
 
-		self.othermenu = Menu.Menu('other', menu)
-		self.othermenu.attach(self, self)
+		self.appmenu_items.append(Menu.Action(_('Refresh'), 'refresh_menu', '', g.STOCK_REFRESH))
+		self.appmenu_items.append(Menu.Action(_('Info'), 'get_info', '', g.STOCK_DIALOG_INFO))
+		self.appmenu_items.append(Menu.Action(_('Options'), 'show_options', '', g.STOCK_PREFERENCES))
+		self.appmenu_items.append(Menu.Separator())
+		self.appmenu_items.append(Menu.Action(_('Close'), 'quit', '', g.STOCK_CLOSE))
+
+		self.appmenu = Menu.Menu('appmenu', self.appmenu_items)
+		self.appmenu.attach(self, self)
 
 	def run_it(self, args=None):
 		#print >>sys.stderr, args
@@ -86,21 +92,22 @@ class RoxMenu(applet.Applet):
 
 	def icons_yeah(self, name):
 		# Load icons
-		path = root+name+'/.DirIcon'
+		path = self.root+name+'/.DirIcon'
 		pixbuf = g.gdk.pixbuf_new_from_file(path)
 		if not pixbuf:
 			print >>sys.stderr, "Can't load stock icon '%s'" % name
 		g.stock_add([(name, name, 0, 0, "")])
-		factory.add(name, g.IconSet(pixbuf = pixbuf))
+		self.factory.add(name, g.IconSet(pixbuf = pixbuf))
 
 	def process_dir(self, directory):
 		"""Walk a directory adding all files found"""
 		def visit(dirname, names):
 			if 'AppRun' in names:
-				file = dirname[len(root):]
+				file = dirname[len(self.root):]
 				self.icons_yeah(file)
 				it = Menu.Action(file, 'run_it', '', file, (dirname,))
-				stuffx.append(it)
+				self.mainmenu_items.append(it)
+				#print >>sys.stderr, file
 			else:
 				self.process_dir(dirname)
 
@@ -131,10 +138,10 @@ class RoxMenu(applet.Applet):
 	def button_press(self, window, event):
 		"""Menu popup"""
 		if event.button == 1:
-			self.menu.popup(self, event, self.position_menu)
+			self.mainmenu.popup(self, event, self.position_menu)
 
 		if event.button == 3:
-			self.othermenu.popup(self, event, self.position_menu)
+			self.appmenu.popup(self, event, self.position_menu)
 
 	def get_panel_orientation(self):
 		"""Return the panel orientation ('Top', 'Bottom', 'Left', 'Right')
@@ -160,6 +167,13 @@ class RoxMenu(applet.Applet):
 		"""Display an InfoWin box"""
 		InfoWin.infowin(APP_NAME)
 
+	def refresh_menu(self):
+		self.mainmenu_items = []
+		factory = g.IconFactory()
+		self.process_dir(self.root)
+		self.factory.add_default()
+		self.mainmenu = Menu.Menu('main', self.mainmenu_items)
+		self.mainmenu.attach(self, self)
 
 	def quit(self):
 		"""Quit"""
