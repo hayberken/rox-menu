@@ -66,13 +66,7 @@ class RoxMenu(applet.Applet):
 		tooltips = g.Tooltips()
 		tooltips.set_tip(self, _('Menu'), tip_private=None)
 
-		self.process_dir(self.root)
-		self.factory.add_default()
-
-		self.mainmenu_items.sort()
-
-		self.mainmenu = Menu.Menu('main', self.mainmenu_items)
-		self.mainmenu.attach(self, self)
+		self.refresh_menu()
 
 		self.appmenu_items.append(Menu.Action(_('Refresh'), 'refresh_menu', '', g.STOCK_REFRESH))
 		self.appmenu_items.append(Menu.Action(_('Info'), 'get_info', '', g.STOCK_DIALOG_INFO))
@@ -90,7 +84,7 @@ class RoxMenu(applet.Applet):
 		except:
 			rox.info(args)
 
-	def icons_yeah(self, name):
+	def load_icons(self, name):
 		# Load icons
 		path = self.root+name+'/.DirIcon'
 		pixbuf = g.gdk.pixbuf_new_from_file(path)
@@ -103,11 +97,10 @@ class RoxMenu(applet.Applet):
 		"""Walk a directory adding all files found"""
 		def visit(dirname, names):
 			if 'AppRun' in names:
-				file = dirname[len(self.root):]
-				self.icons_yeah(file)
-				it = Menu.Action(file, 'run_it', '', file, (dirname,))
-				self.mainmenu_items.append(it)
-				#print >>sys.stderr, file
+				offset = len(self.root)
+				file = dirname[offset:]
+				self.load_icons(file)
+				self.mainmenu_items.append((dirname, file))
 			else:
 				self.process_dir(dirname)
 
@@ -118,6 +111,13 @@ class RoxMenu(applet.Applet):
 				visit(tmp, os.listdir(tmp))
 			except:
 				pass
+
+	def build_menu(self):
+		menu = []
+		for (dirname, file) in self.mainmenu_items:
+			it = Menu.Action(file, 'run_it', '', file, (dirname,))
+			menu.append(it)
+		return menu
 
 	def event_callback(self, widget, rectangle):
 		"""Called when the panel sends a size."""
@@ -169,10 +169,10 @@ class RoxMenu(applet.Applet):
 
 	def refresh_menu(self):
 		self.mainmenu_items = []
-		factory = g.IconFactory()
 		self.process_dir(self.root)
 		self.factory.add_default()
-		self.mainmenu = Menu.Menu('main', self.mainmenu_items)
+		self.mainmenu_items.sort()
+		self.mainmenu = Menu.Menu('main', self.build_menu())
 		self.mainmenu.attach(self, self)
 
 	def quit(self):
