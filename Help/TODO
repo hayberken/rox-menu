@@ -1,0 +1,8 @@
+TODO items for Menu
+
+* Bigger icons
+* Scan multiple Apps directories (e.g. ~ and /usr/)
+* Sort the list?
+* Folders first?
+* Multiple folder depths (currently only one level deep)
+* Use ROX-Lib to determine if we have an AppDir or not instead of looking for the AppRun file?

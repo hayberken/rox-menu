@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<options>
+  <section title='Menu'>
+		<entry name='applications' label='Path'>
+		The location of your Apps folder.  (This should become a path at some point).
+		</entry>
+  </section>
+</options>
