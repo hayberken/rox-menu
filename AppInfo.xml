@@ -1,11 +1,19 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <AppInfo>
-	<Summary>A Panel Menu for ROX</Summary>
-<About>
-	<Purpose>A Panel Menu for ROX</Purpose>
-	<Version>003</Version>
-	<Authors>Ken Hayber</Authors>
-	<License>GNU General Public License</License>
-	<Homepage>http://www.hayber.us/rox/Menu</Homepage>
-</About>
+  <Summary>A Panel Menu for ROX</Summary>
+  <Summary xml:lang="de">Ein Panelmenü für ROX</Summary>
+  <About>
+    <Purpose>Panel applet providing a menu to start ROX apps.</Purpose>
+    <Version>004 (04-Sep-2005)</Version>
+    <Authors>
+      Ken Hayber &lt;ken@hayber.us&gt;, Christopher Arndt &lt;chris@chrisarndt.de&gt;
+    </Authors>
+    <License>GNU General Public License</License>
+    <Homepage>http://www.hayber.us/rox/Menu</Homepage>
+  </About>
+  <About xml:lang="de">
+    <Purpose label="Verwendung">Stellt ein Menü, um ROX-Anwendungen zu starten, auf dem Panel bereit.</Purpose>
+    <Authors label="Autoren"/>
+    <License label="Lizenz"/>
+  </About>
 </AppInfo>

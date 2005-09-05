@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Menu 002\n"
+"POT-Creation-Date: 2005-09-04 15:52+IST\n"
+"PO-Revision-Date: 2005-09-01 01:31+IST\n"
+"Last-Translator: Chris Arndt <no@email.com>\n"
+"Language-Team: Chris Arndt <no@email.com>>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: AppRun:11
+msgid ""
+"Menu is meant to be used as a ROX panel applet only.\n"
+"\n"
+"Drag it to your panel to run it!"
+msgstr ""
+"Menu kann nur als Panelapplet verwendet werden.\n"
+"\n"
+"Ziehe die Anwendung auf ein Panel, um sie zu starten!"
+
+#: AppRun:17
+msgid ""
+"Run as an applet but got no valid file descriptor.\n"
+"\n"
+"This should not happen."
+msgstr ""
+"Die Anwendung wurde als Applet gestartet, erhielt aber keinen gültigen "
+"Dateideskriptor.\n"
+"\n"
+"Dies sollte eigentlich nicht passieren."
+
+#: infowin.py:48
+msgid "About"
+msgstr "Über"
+
+#: infowin.py:94
+msgid "Info"
+msgstr "Info"
+
+#: infowin.py:162
+msgid "Open URL <%s> with the default URL handler."
+msgstr "Öffne die URL <%s> mit der Standardanwendung für URLs."
+
+#: rmenu.py:88
+msgid ""
+"Application starter - click left to open menu, click right for more options."
+msgstr ""
+"Anwendungsstarter - klicke links, um das Menü zu öffnen, klicke rechts für "
+"weitere Optionen."
+
+#: rmenu.py:194
+msgid ""
+"Could not read your application directory.\n"
+"\n"
+"Please set the path to your Apps folder in the options!"
+msgstr ""
+"Konnte den Anwendungsordner nicht lesen.\n"
+"\n"
+"Bitte setzen Sie den Pfad zu Ihrem Anwendungsordner in den Optionen!"
+
+#: rmenu.py:251
+msgid "Open apps folder"
+msgstr "Öffne Anwendungsordner"
+
+#: rmenu.py:253
+msgid "Refresh menu"
+msgstr "Lese Menü erneut ein"
+
+#: rmenu.py:256
+msgid "Info..."
+msgstr "Über..."
+
+#: rmenu.py:258
+msgid "Options..."
+msgstr "Optionen..."
+
+#: rmenu.py:261
+msgid "Close"
+msgstr "Schließe"
+
+#: rmenu.py:271
+msgid ""
+"Could not open your application directory.\n"
+"\n"
+"Please set the path to your Apps folder in the options!"
+msgstr ""
+"Konnte den Anwendungsordner nicht öffnen.\n"
+"\n"
+"Bitte setzen Sie den Pfad zu Ihrem Anwendungsordner in den Optionen!"
+
+#: tips:1
+msgid "Menu"
+msgstr "Menü"
+
+#: tips:2
+msgid "Path"
+msgstr "Pfad"
+
+#: tips:3 tips:4 tips:5
+msgid ""
+"The location of your Apps folder.  (This should become a path at some point)."
+msgstr "Der Pfad zu Ihrem Anwendungsordner."

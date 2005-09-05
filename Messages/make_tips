@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 from xmllib import *
 import string, os
@@ -40,10 +40,10 @@ file.close()
 parser.close()
 out.close()
 
-file = open('../Mixer.xml', 'rb')
-out = open('../tips', 'wb')
-parser = Parser()
-parser.feed(file.read())
-file.close()
-parser.close()
-out.close()
+# file = open('../Mixer.xml', 'rb')
+# out = open('../tips', 'wb')
+# parser = Parser()
+# parser.feed(file.read())
+# file.close()
+# parser.close()
+# out.close()

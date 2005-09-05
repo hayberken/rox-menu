@@ -1,0 +1,37 @@
+* Sun Sep 04 2005 Christopher Arndt
+- handle multiple email addresses with infowin
+
+* Sat Sep 03 2005 Christopher Arndt
+- infowin refactoring
+- fix error handling in App(let)Run
+- longer README
+
+* Fri Sep 02 2005 Christopher Arndt
+- new module for infowin
+- rescale icon for infowin
+- add Help button in infowin
+- fixed typo in AppInfo.xml
+- fixed code to detect if running as an applet in AppRun
+- more docstrings
+
+* Thu Sep 01 2005 Christopher Arndt
+- German translation
+- German AppInfo.xml
+- rename method "event_callback" to "resize"
+- integrate changes from Ken Hayber's version 003
+
+* Wed Aug 31 2005 Christopher Arndt
+- handle unvalid app dirs gracefully
+- recursivley scan directories for menu entries
+- sort entries (folders first, case-insensitive)
+- change indentation to 4 spaces
+- some docstring corrections
+- menu option for refreshing app menu to right-click popup
+- replaced InfoWin with own version
+- added Homepage and better Purpose tags to AppInfo.xml
+- middle-mouse click opens App folder in ROX-Filer
+- Better applet tooltip
+- handle option changes
+- destroy infowin (if exists) when quitting
+- AppRun with error message
+- menu option for opening the apps folder with ROX-Filer

@@ -3,8 +3,8 @@
 echo Extracting messages from source files...
 echo
 
-python ./tips.py
-(cd ..; pygettext *.py tips)
+python ./make_tips
+(cd ..; pygettext AppRun *.py tips)
 
 echo
 echo Updating all .po files...
