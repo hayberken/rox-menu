@@ -53,7 +53,7 @@ class CommonMixIn:
     def key_event(self, window, kev):
         if kev.keyval == g.keysyms.Escape:
             self.close()
-            return 1
+            return True
         elif kev.keyval in [g.keysyms.Return, g.keysyms.KP_Enter] \
           and hasattr(self, '_ok_cb'):
             self._ok_cb()

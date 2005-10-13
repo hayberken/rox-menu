@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Menu 002\n"
-"POT-Creation-Date: 2005-09-04 15:52+IST\n"
+"POT-Creation-Date: 2005-09-14 15:38+IST\n"
 "PO-Revision-Date: 2005-09-01 01:31+IST\n"
 "Last-Translator: Chris Arndt <no@email.com>\n"
 "Language-Team: Chris Arndt <no@email.com>>\n"
@@ -14,47 +14,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: AppRun:11
+#: AppRun:14
 msgid ""
-"Menu is meant to be used as a ROX panel applet only.\n"
+"Menu is meant to be used as a ROX panel applet only. You can drag it to your "
+"panel to run it.\n"
 "\n"
-"Drag it to your panel to run it!"
+"Do you want me to add it to the panel now?"
 msgstr ""
-"Menu kann nur als Panelapplet verwendet werden.\n"
+"Menu kann nur als Panelapplet verwendet werden. Sie können es auf ein Panel "
+"ziehen, um es dort hinzuzufügen.\n"
 "\n"
-"Ziehe die Anwendung auf ein Panel, um sie zu starten!"
+"Wollen Sie, dass ich das Programm jetzt zum Panel hinzufüge?"
 
-#: AppRun:17
+#: AppRun:16
+msgid "Add to panel"
+msgstr "Zum Panel hinzufügen"
+
+#: AppRun:23
 msgid ""
-"Run as an applet but got no valid file descriptor.\n"
-"\n"
-"This should not happen."
+"You don't seem to have a panel on your default display. Please open a ROX "
+"panel and try again"
 msgstr ""
-"Die Anwendung wurde als Applet gestartet, erhielt aber keinen gültigen "
-"Dateideskriptor.\n"
-"\n"
-"Dies sollte eigentlich nicht passieren."
+"Anscheinend haben Sie kein Panel auf Ihrem Standarddisplay. Bitte öffen Sie "
+"ein ROX-Panel und versuchen Sie es erneut."
 
-#: infowin.py:48
+#: infowin.py:45
 msgid "About"
 msgstr "Über"
 
-#: infowin.py:94
+#: infowin.py:91
 msgid "Info"
 msgstr "Info"
 
-#: infowin.py:162
+#: infowin.py:159
 msgid "Open URL <%s> with the default URL handler."
 msgstr "Öffne die URL <%s> mit der Standardanwendung für URLs."
 
-#: rmenu.py:88
+#: rmenu.py:89
 msgid ""
 "Application starter - click left to open menu, click right for more options."
 msgstr ""
 "Anwendungsstarter - klicke links, um das Menü zu öffnen, klicke rechts für "
 "weitere Optionen."
 
-#: rmenu.py:194
+#: rmenu.py:238
 msgid ""
 "Could not read your application directory.\n"
 "\n"
@@ -64,27 +67,27 @@ msgstr ""
 "\n"
 "Bitte setzen Sie den Pfad zu Ihrem Anwendungsordner in den Optionen!"
 
-#: rmenu.py:251
+#: rmenu.py:307
 msgid "Open apps folder"
 msgstr "Öffne Anwendungsordner"
 
-#: rmenu.py:253
+#: rmenu.py:309
 msgid "Refresh menu"
 msgstr "Lese Menü erneut ein"
 
-#: rmenu.py:256
+#: rmenu.py:312
 msgid "Info..."
 msgstr "Über..."
 
-#: rmenu.py:258
+#: rmenu.py:314
 msgid "Options..."
 msgstr "Optionen..."
 
-#: rmenu.py:261
+#: rmenu.py:317
 msgid "Close"
 msgstr "Schließe"
 
-#: rmenu.py:271
+#: rmenu.py:327
 msgid ""
 "Could not open your application directory.\n"
 "\n"
@@ -102,7 +105,23 @@ msgstr "Menü"
 msgid "Path"
 msgstr "Pfad"
 
-#: tips:3 tips:4 tips:5
+#: tips:3
 msgid ""
 "The location of your Apps folder.  (This should become a path at some point)."
 msgstr "Der Pfad zu Ihrem Anwendungsordner."
+
+#: tips:4
+msgid "Sort menu entries"
+msgstr "Menü sortieren"
+
+#: tips:5
+msgid "Sort the menu entries in alphabetical order."
+msgstr "Sortiere die Menüeinträge in alphabetischer Reihenfolge."
+
+#: tips:6
+msgid "Use icons"
+msgstr "Verwende Symbole"
+
+#: tips:7 tips:8 tips:9
+msgid "Display icons next to menu entries for application directories."
+msgstr "Zeige Symbole neben den Menüeinträgen für Anwendungen an."
