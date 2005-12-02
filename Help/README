@@ -53,7 +53,7 @@ Middle click + drag to position the applet.
 Right click for the options menu. From there you can:
     - open the directory with your ROX applications in a filer window.
     - request the applet to rebuild the application menu from disk.
-    - view the program (version number, authors, website etc.)
+    - view the program information (version number, authors, website etc.)
     - open the option edit dialog to set the directory containing your ROX
       applications.
     - close the applet.

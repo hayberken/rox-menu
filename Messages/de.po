@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Menu 002\n"
-"POT-Creation-Date: 2005-09-14 15:38+IST\n"
+"POT-Creation-Date: 2005-11-29 09:54+GMT\n"
 "PO-Revision-Date: 2005-09-01 01:31+IST\n"
 "Last-Translator: Chris Arndt <no@email.com>\n"
 "Language-Team: Chris Arndt <no@email.com>>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: AppRun:14
+#: AppRun:13
 msgid ""
 "Menu is meant to be used as a ROX panel applet only. You can drag it to your "
 "panel to run it.\n"
@@ -26,11 +26,11 @@ msgstr ""
 "\n"
 "Wollen Sie, dass ich das Programm jetzt zum Panel hinzufüge?"
 
-#: AppRun:16
+#: AppRun:15
 msgid "Add to panel"
 msgstr "Zum Panel hinzufügen"
 
-#: AppRun:23
+#: AppRun:22
 msgid ""
 "You don't seem to have a panel on your default display. Please open a ROX "
 "panel and try again"
@@ -50,14 +50,14 @@ msgstr "Info"
 msgid "Open URL <%s> with the default URL handler."
 msgstr "Öffne die URL <%s> mit der Standardanwendung für URLs."
 
-#: rmenu.py:89
+#: rmenu.py:130
 msgid ""
 "Application starter - click left to open menu, click right for more options."
 msgstr ""
 "Anwendungsstarter - klicke links, um das Menü zu öffnen, klicke rechts für "
 "weitere Optionen."
 
-#: rmenu.py:238
+#: rmenu.py:247
 msgid ""
 "Could not read your application directory.\n"
 "\n"
@@ -67,27 +67,27 @@ msgstr ""
 "\n"
 "Bitte setzen Sie den Pfad zu Ihrem Anwendungsordner in den Optionen!"
 
-#: rmenu.py:307
+#: rmenu.py:329
 msgid "Open apps folder"
 msgstr "Öffne Anwendungsordner"
 
-#: rmenu.py:309
+#: rmenu.py:331
 msgid "Refresh menu"
 msgstr "Lese Menü erneut ein"
 
-#: rmenu.py:312
+#: rmenu.py:334
 msgid "Info..."
 msgstr "Über..."
 
-#: rmenu.py:314
+#: rmenu.py:336
 msgid "Options..."
 msgstr "Optionen..."
 
-#: rmenu.py:317
+#: rmenu.py:339
 msgid "Close"
 msgstr "Schließe"
 
-#: rmenu.py:327
+#: rmenu.py:349
 msgid ""
 "Could not open your application directory.\n"
 "\n"
@@ -106,8 +106,9 @@ msgid "Path"
 msgstr "Pfad"
 
 #: tips:3
+#, fuzzy
 msgid ""
-"The location of your Apps folder.  (This should become a path at some point)."
+"The location of your Apps folder. (This should become a path at some point)."
 msgstr "Der Pfad zu Ihrem Anwendungsordner."
 
 #: tips:4
@@ -123,5 +124,5 @@ msgid "Use icons"
 msgstr "Verwende Symbole"
 
 #: tips:7 tips:8 tips:9
-msgid "Display icons next to menu entries for application directories."
-msgstr "Zeige Symbole neben den Menüeinträgen für Anwendungen an."
+msgid "Display icons next to menu leaf entries."
+msgstr "Zeige Symbole neben den Menüeinträgen an."
