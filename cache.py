@@ -40,6 +40,7 @@ class CacheManager:
         self._debug('CACHE open:', self.cache_file)
 
     def store_menu(self, root, menu):
+        pass
         """Save menu structure to disk cache."""
 
         try:

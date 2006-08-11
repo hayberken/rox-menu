@@ -183,8 +183,11 @@ class RoxMenu(applet.Applet):
                 rox.report_exception()
                 print >>sys.stderr, "Can't load icon '%s'" % iconpath
                 return
-        g.stock_add([(name, name, 0, 0, "")])
-        self.factory.add(name, g.IconSet(pixbuf=pb))
+        try:
+            g.stock_add([(name, name, 0, 0, "")])
+            self.factory.add(name, g.IconSet(pixbuf=pb))
+        except:
+	        pass
 
     def process_dir(self, directory):
         """Walk a directory and build main menu.
@@ -256,7 +259,7 @@ class RoxMenu(applet.Applet):
         Position in ('Top', 'Bottom', 'Left', 'Right').
         """
 
-        pos = self.socket.property_get('_ROX_PANEL_MENU_POS', 'STRING', g.FALSE)
+        pos = self.socket.property_get('_ROX_PANEL_MENU_POS', 'STRING', False)
         if pos: pos = pos[2]
         if pos:
             side, margin = pos.split(',')
